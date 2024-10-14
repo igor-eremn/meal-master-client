@@ -1,18 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './pages/Home';
+import Header from './components/Header';
 import './App.css';
-
-function Home() {
-  return <h2>Home Page</h2>;
-}
-
-function Header() {
-  return (
-    <header>
-      <h1 className="header-title">Meal Master</h1>
-    </header>
-  );
-}
 
 function App() {
   return (
