@@ -44,7 +44,10 @@ const Home = () => {
     <div className="home-container">
       <div className="grid-container">
         <div className="input-column">
-          <div className="input-header">
+
+        </div>
+        <div className="response-column">
+        <div className="input-header">
             <h3 className="column-title">User Input</h3>
             <button className="ask-ai-button" onClick={askAI}>Ask AI</button>
           </div>
@@ -54,8 +57,6 @@ const Home = () => {
             value={userInput}
             onChange={(e) => setUserInput(e.target.value)}
           ></textarea>
-        </div>
-        <div className="response-column">
           <div className="input-header">
             <h3 className="column-title">AI Response</h3>
           </div>
