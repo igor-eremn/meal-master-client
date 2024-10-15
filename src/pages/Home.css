@@ -30,7 +30,7 @@
     width: 96.5%;
     min-height: 200px;
     max-height: 400px;
-    height: 200px;
+    height: 250px;
     border: 1px solid #ddd;
     border-radius: 4px;
     padding: 10px;
@@ -44,3 +44,29 @@
   .response-area {
     overflow-y: auto;
   }
+
+  .input-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.ask-ai-button {
+  background-color: #6A9C89;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.ask-ai-button:hover {
+  background-color: #5a8c79;
+}
+
+.input-area {
+  width: 100%;
+  box-sizing: border-box;
+}
