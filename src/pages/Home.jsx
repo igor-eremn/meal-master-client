@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Home.css';
+import Calculator from '../components/calculator/Calculator';
 
 const Home = () => {
   const [userInput, setUserInput] = useState(sessionStorage.getItem('userInput') || '');
@@ -44,10 +45,10 @@ const Home = () => {
     <div className="home-container">
       <div className="grid-container">
         <div className="input-column">
-
+          <Calculator />
         </div>
         <div className="response-column">
-        <div className="input-header">
+          <div className="input-header">
             <h3 className="column-title">User Input</h3>
             <button className="ask-ai-button" onClick={askAI}>Ask AI</button>
           </div>

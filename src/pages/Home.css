@@ -28,8 +28,8 @@
   
   .input-area, .response-area {
     width: 96.5%;
-    min-height: 200px;
-    max-height: 400px;
+    min-height: 300px;
+    max-height: 300px;
     height: 250px;
     border: 1px solid #ddd;
     border-radius: 4px;
