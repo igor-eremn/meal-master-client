@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './DietPref.css';
 
-import normalIcon       from '../../assets/diet-pref/dt-1.png';
-import veganIcon        from '../../assets/diet-pref/dt-2.png';
-import vegetarianIcon   from '../../assets/diet-pref/dt-3.png';
-import glutenFreeIcon   from '../../assets/diet-pref/dt-4.png';
-import dairyFreeIcon    from '../../assets/diet-pref/dt-5.png';
+import normalIcon from '../../assets/diet-pref/dt-1.png';
+import veganIcon from '../../assets/diet-pref/dt-2.png';
+import vegetarianIcon from '../../assets/diet-pref/dt-3.png';
+import glutenFreeIcon from '../../assets/diet-pref/dt-4.png';
+import dairyFreeIcon from '../../assets/diet-pref/dt-5.png';
 
 const DietPref = () => {
-  const [selectedDiet, setSelectedDiet] = useState('normal');
+  const [selectedDiets, setSelectedDiets] = useState(['normal']);
 
   const dietOptions = [
     { name: 'normal', icon: normalIcon },
@@ -17,6 +17,54 @@ const DietPref = () => {
     { name: 'gluten-free', icon: glutenFreeIcon },
     { name: 'dairy-free', icon: dairyFreeIcon },
   ];
+
+  const validCombinations = [
+    ['normal'],
+    ['vegan'],
+    ['vegetarian'],
+    ['dairy-free'],
+    ['gluten-free'],
+    ['vegan', 'gluten-free'],
+    ['vegan', 'dairy-free'],
+    ['vegetarian', 'dairy-free'],
+    ['vegetarian', 'gluten-free'],
+    ['dairy-free', 'gluten-free'],
+    ['vegan', 'dairy-free', 'gluten-free'],
+    ['vegetarian', 'dairy-free', 'gluten-free'],
+  ];
+
+  const isValidCombination = (diets) => {
+    return validCombinations.some(combo => 
+      combo.length === diets.length && combo.every(diet => diets.includes(diet))
+    );
+  };
+
+  const toggleDiet = (dietName) => {
+    setSelectedDiets(prevDiets => {
+      let newDiets;
+      if (prevDiets.includes(dietName)) {
+        newDiets = prevDiets.filter(diet => diet !== dietName);
+      } else {
+        newDiets = [...prevDiets, dietName];
+      }
+
+      if (dietName === 'normal') {
+        newDiets = ['normal'];
+      } else if (newDiets.includes('normal')) {
+        newDiets = newDiets.filter(diet => diet !== 'normal');
+      }
+
+      if (isValidCombination(newDiets)) {
+        return newDiets;
+      } else {
+        return prevDiets;
+      }
+    });
+  };
+
+  useEffect(() => {
+    console.log('Selected diets:', selectedDiets);
+  }, [selectedDiets]);
 
   return (
     <div className="diet-pref">
@@ -27,8 +75,8 @@ const DietPref = () => {
             key={index}
             src={diet.icon}
             alt={`${diet.name} diet`}
-            className={`diet-icon ${selectedDiet === diet.name ? 'selected' : ''}`}
-            onClick={() => setSelectedDiet(diet.name)}
+            className={`diet-icon ${selectedDiets.includes(diet.name) ? 'selected' : ''}`}
+            onClick={() => toggleDiet(diet.name)}
           />
         ))}
       </div>
