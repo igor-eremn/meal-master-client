@@ -17,6 +17,46 @@ const Calculator = () => {
   const [activity, setActivity] = useState(1);
   const [weightGoal, setWeightGoal] = useState('');
   const [timeline, setTimeline] = useState('');
+  const [result, setResult] = useState('');
+
+  const calculateBMR = () => {
+    const w = parseFloat(weight);
+    const h = parseFloat(height);
+    const a = parseFloat(age);
+
+    if (gender === 'male') {
+      return 10 * w + 6.25 * h - 5 * a + 5;
+    } else {
+      return 10 * w + 6.25 * h - 5 * a - 161;
+    }
+  };
+
+  const calculateTDEE = (bmr) => {
+    const activityFactors = [1.2, 1.375, 1.55, 1.725, 1.9];
+    return bmr * activityFactors[activity - 1];
+  };
+
+  const calculateMacros = (tdee) => {
+    const protein = (tdee * 0.25) / 4;
+    const carbs = (tdee * 0.55) / 4;
+    const fats = (tdee * 0.2) / 9;
+    return { protein, carbs, fats };
+  };
+
+  const handleCalculate = () => {
+    const bmr = calculateBMR();
+    const tdee = calculateTDEE(bmr);
+    const macros = calculateMacros(tdee);
+
+    setResult(
+      `BMR: ${bmr.toFixed(2)} calories/day\n` +
+      `TDEE: ${tdee.toFixed(2)} calories/day\n` +
+      `Macros:\n` +
+      `Protein: ${macros.protein.toFixed(2)}g\n` +
+      `Carbs: ${macros.carbs.toFixed(2)}g\n` +
+      `Fats: ${macros.fats.toFixed(2)}g`
+    );
+  };
 
   return (
     <div className="calculator">
@@ -63,25 +103,15 @@ const Calculator = () => {
           />
         ))}
       </div>
-      
-      <div className="input-row">
-        <div className="input-group">
-          <label>Weight Goal (kg):</label>
-          <input type="number" value={weightGoal} onChange={(e) => setWeightGoal(e.target.value)} />
-        </div>
-        
-        <div className="input-group">
-          <label>Timeline (days):</label>
-          <input type="number" value={timeline} onChange={(e) => setTimeline(e.target.value)} />
-        </div>
-      </div>
+
+      <button onClick={handleCalculate} className="calculate-button">Calculate</button>
 
       <textarea 
-            className="input-area"
-            placeholder="Calculations will be here..."
-            value={""}
-            disabled={true}
-        ></textarea>
+        className="input-area"
+        placeholder="Calculations will be here..."
+        value={result}
+        readOnly
+      ></textarea>
     </div>
   );
 };
