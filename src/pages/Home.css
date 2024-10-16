@@ -1,74 +1,25 @@
 .home-container {
-    padding: 20px;
-  }
-  
-  .page-title {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-  }
-  
-  .input-column, .response-column {
-    border: 1px solid #6A9C89;
-    border-radius: 4px;
-    padding: 15px;
-    min-height: 250px;
-    min-width: 600px;
-  }
-  
-  .column-title {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  
-  .input-area, .response-area {
-    width: 96.5%;
-    min-height: 300px;
-    max-height: 300px;
-    height: 250px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 10px;
-    background-color: #e0f2f1;
-  }
-  
-  .input-area {
-    resize: vertical;
-  }
-  
-  .response-area {
-    overflow-y: auto;
-  }
-
-  .input-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 10px;
+  padding: 20px;
 }
 
-.ask-ai-button {
-  background-color: #6A9C89;
-  color: white;
-  border: none;
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.input-column, .response-column {
+  border: 1px solid #6A9C89;
   border-radius: 4px;
-  padding: 8px 16px;
-  cursor: pointer;
-  font-size: 14px;
+  padding: 15px;
+  min-height: 250px;
+  min-width: 600px;
 }
 
-.ask-ai-button:hover {
-  background-color: #5a8c79;
-}
-
-.input-area {
-  width: 100%;
-  box-sizing: border-box;
+.goal-title {
+  font-size: 18px;
+  margin-bottom: 15px;
+  text-align: center;
 }
 
 .input-row {
@@ -100,4 +51,32 @@
   background-color: #e0f2f1;
   border-radius: 4px;
   box-sizing: border-box;
+}
+
+.ask-ai-button {
+  width: 100%;
+  background-color: #6A9C89;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 16px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.ask-ai-button:hover {
+  background-color: #5a8c79;
+}
+
+.input-area {
+  width: 100%;
+  min-height: 300px;
+  max-height: 300px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  background-color: #e0f2f1;
+  box-sizing: border-box;
+  resize: vertical;
 }

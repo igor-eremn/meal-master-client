@@ -51,6 +51,7 @@ const Home = () => {
           <Calculator />
         </div>
         <div className="response-column">
+          <h3 className="goal-title">Your Goal</h3>
           <div className="input-row">
             <div className="input-group">
               <label>Weight Goal (kg):</label>
@@ -62,10 +63,7 @@ const Home = () => {
               <input type="number" value={timeline} onChange={(e) => setTimeline(e.target.value)} />
             </div>
           </div>
-          <div className="input-header">
-            <button className="ask-ai-button" onClick={askAI}>What's my diet then?</button>
-            <h3 className="column-title">AI Response</h3>
-          </div>
+          <button className="ask-ai-button" onClick={askAI}>What's my diet then?</button>
           <textarea 
             className="input-area"
             placeholder="Enter your text here..."
