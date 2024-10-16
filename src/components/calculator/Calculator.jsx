@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import './Calculator.css';
 
-import manIcon from '../../assets/man-icon.png';
-import womanIcon from '../../assets/woman-icon.png';
-import activity1Icon from '../../assets/al-1.png';
-import activity2Icon from '../../assets/al-2.png';
-import activity3Icon from '../../assets/al-3.png';
-import activity4Icon from '../../assets/al-4.png';
-import activity5Icon from '../../assets/al-5.png';
+import manIcon        from '../../assets/calculator/man-icon.png';
+import womanIcon      from '../../assets/calculator/woman-icon.png';
+import activity1Icon  from '../../assets/calculator/al-1.png';
+import activity2Icon  from '../../assets/calculator/al-2.png';
+import activity3Icon  from '../../assets/calculator/al-3.png';
+import activity4Icon  from '../../assets/calculator/al-4.png';
+import activity5Icon  from '../../assets/calculator/al-5.png';
 
 const Calculator = () => {
   const [gender, setGender] = useState('male');
