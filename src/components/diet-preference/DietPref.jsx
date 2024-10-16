@@ -62,13 +62,20 @@ const DietPref = () => {
     });
   };
 
+  const resetDiets = () => {
+    setSelectedDiets(['normal']);
+  };
+
   useEffect(() => {
     console.log('Selected diets:', selectedDiets);
   }, [selectedDiets]);
 
   return (
     <div className="diet-pref">
-      <h3 className="diet-title">Diet Preference</h3>
+      <div className="diet-title-container">
+        <h3 className="diet-title">Diet Preference</h3>
+        <span className="reset-text" onClick={resetDiets}>(reset)</span>
+      </div>
       <div className="diet-selection">
         {dietOptions.map((diet, index) => (
           <img
