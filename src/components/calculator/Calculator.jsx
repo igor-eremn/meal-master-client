@@ -15,8 +15,6 @@ const Calculator = () => {
   const [weight, setWeight] = useState('');
   const [height, setHeight] = useState('');
   const [activity, setActivity] = useState(1);
-  const [weightGoal, setWeightGoal] = useState('');
-  const [timeline, setTimeline] = useState('');
   const [result, setResult] = useState('');
 
   const calculateBMR = () => {

@@ -6,6 +6,9 @@ const Home = () => {
   const [userInput, setUserInput] = useState(sessionStorage.getItem('userInput') || '');
   const [aiResponse, setAiResponse] = useState(sessionStorage.getItem('aiResponse') || 'Your diet will be here...');
 
+  const [weightGoal, setWeightGoal] = useState('');
+  const [timeline, setTimeline] = useState('');
+
   useEffect(() => {
     sessionStorage.setItem('userInput', userInput);
   }, [userInput]);
@@ -48,6 +51,17 @@ const Home = () => {
           <Calculator />
         </div>
         <div className="response-column">
+          <div className="input-row">
+            <div className="input-group">
+              <label>Weight Goal (kg):</label>
+              <input type="number" value={weightGoal} onChange={(e) => setWeightGoal(e.target.value)} />
+            </div>
+            
+            <div className="input-group">
+              <label>Timeline (days):</label>
+              <input type="number" value={timeline} onChange={(e) => setTimeline(e.target.value)} />
+            </div>
+          </div>
           <div className="input-header">
             <button className="ask-ai-button" onClick={askAI}>What's my diet then?</button>
             <h3 className="column-title">AI Response</h3>

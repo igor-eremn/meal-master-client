@@ -70,3 +70,34 @@
   width: 100%;
   box-sizing: border-box;
 }
+
+.input-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.input-group {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.input-group:last-child {
+  margin-right: 0;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  padding-left: 33%;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  background-color: #e0f2f1;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
