@@ -75,11 +75,13 @@ const Calculator = () => {
           <input type="number" value={timeline} onChange={(e) => setTimeline(e.target.value)} />
         </div>
       </div>
-      
-      <div className="calculation-area">
-        {/* Calculation results will go here */}
-        <p>Calculation results will be displayed here.</p>
-      </div>
+
+      <textarea 
+            className="input-area"
+            placeholder="Calculations will be here..."
+            value={""}
+            disabled={true}
+        ></textarea>
     </div>
   );
 };

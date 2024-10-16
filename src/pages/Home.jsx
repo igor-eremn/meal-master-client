@@ -4,7 +4,7 @@ import Calculator from '../components/calculator/Calculator';
 
 const Home = () => {
   const [userInput, setUserInput] = useState(sessionStorage.getItem('userInput') || '');
-  const [aiResponse, setAiResponse] = useState(sessionStorage.getItem('aiResponse') || 'AI response will appear here.');
+  const [aiResponse, setAiResponse] = useState(sessionStorage.getItem('aiResponse') || 'Your diet will be here...');
 
   useEffect(() => {
     sessionStorage.setItem('userInput', userInput);
@@ -49,16 +49,7 @@ const Home = () => {
         </div>
         <div className="response-column">
           <div className="input-header">
-            <h3 className="column-title">User Input</h3>
-            <button className="ask-ai-button" onClick={askAI}>Ask AI</button>
-          </div>
-          <textarea 
-            className="input-area"
-            placeholder="Enter your text here..."
-            value={userInput}
-            onChange={(e) => setUserInput(e.target.value)}
-          ></textarea>
-          <div className="input-header">
+            <button className="ask-ai-button" onClick={askAI}>What's my diet then?</button>
             <h3 className="column-title">AI Response</h3>
           </div>
           <textarea 
