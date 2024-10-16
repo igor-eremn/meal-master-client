@@ -1,0 +1,36 @@
+.diet-pref {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .diet-title {
+    font-size: 18px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  .diet-selection {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .diet-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 15px;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+  }
+  
+  .diet-icon.selected {
+    opacity: 1;
+  }
+  
+  .diet-icon:hover {
+    opacity: 0.8;
+  }
+  
+  .input-area {
+    margin-top: 3px;
+  }

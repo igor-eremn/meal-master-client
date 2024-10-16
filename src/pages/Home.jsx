@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Home.css';
 import Calculator from '../components/calculator/Calculator';
+import DietPref from '../components/diet-preference/DietPref';
 
 const Home = () => {
   const [userInput, setUserInput] = useState(sessionStorage.getItem('userInput') || '');
@@ -63,6 +64,7 @@ const Home = () => {
               <input type="number" value={timeline} onChange={(e) => setTimeline(e.target.value)} />
             </div>
           </div>
+          <DietPref />
           <button className="ask-ai-button" onClick={askAI}>What's my diet then?</button>
           <textarea 
             className="input-area"
