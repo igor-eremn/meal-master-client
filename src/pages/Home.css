@@ -1,19 +1,21 @@
 .home-container {
   display: flex;
-  min-height: 100vh;
+  min-height: 90.5vh;
   background-color: #C4DAD2;
 }
 
 .left-sidebar, .right-sidebar {
   flex: 0 0 20%;
-}
-.left-sidebar{
-  border-right: 2px solid #16423C;
-}
-.right-sidebar{
-  border-left: 2px solid #16423C;
+  position: relative;
 }
 
+.left-sidebar {
+  border-right: 2px solid #16423C;
+}
+
+.right-sidebar {
+  border-left: 2px solid #16423C;
+}
 
 .main-content {
   flex: 0 0 60%;
@@ -22,6 +24,12 @@
   display: flex;
   flex-direction: column;
 }
+.left-sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+}
+
 
 .calculator-section {
   margin-top: 20px;

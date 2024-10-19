@@ -48,7 +48,7 @@ const Home = () => {
   return (
     <div className="home-container">
       <div className="left-sidebar">
-        {/* Left sidebar content */}
+        <Calculator />
       </div>
       <div className="main-content">
         <h3 className="goal-title">Your Goal</h3>
@@ -71,9 +71,6 @@ const Home = () => {
           value={aiResponse}
           disabled={true}
         ></textarea>
-        <div className="calculator-section">
-          <Calculator />
-        </div>
       </div>
       <div className="right-sidebar">
         {/* Right sidebar content */}
