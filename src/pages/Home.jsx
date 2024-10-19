@@ -46,33 +46,33 @@ const Home = () => {
   };
 
   return (
-    <div className="home-container">
-      <div className="left-sidebar">
+    <div className="home-page-container">
+      <div className="home-page-left-sidebar">
         <Calculator />
       </div>
-      <div className="main-content">
-        <h3 className="goal-title">Your Goal</h3>
-        <div className="input-row">
-          <div className="input-group">
+      <div className="home-page-main-content">
+        <h3 className="home-page-goal-title">Your Goal</h3>
+        <div className="home-page-input-row">
+          <div className="home-page-input-group">
             <label>Weight Goal (kg):</label>
             <input type="number" value={weightGoal} onChange={(e) => setWeightGoal(e.target.value)} />
           </div>
           
-          <div className="input-group">
+          <div className="home-page-input-group">
             <label>Timeline (days):</label>
             <input type="number" value={timeline} onChange={(e) => setTimeline(e.target.value)} />
           </div>
         </div>
         <DietPref />
-        <button className="ask-ai-button" onClick={askAI}>What's my diet then?</button>
+        <button className="home-page-ask-ai-button" onClick={askAI}>What's my diet then?</button>
         <textarea 
-          className="input-area"
+          className="home-page-input-area"
           placeholder="Enter your text here..."
           value={aiResponse}
           disabled={true}
         ></textarea>
       </div>
-      <div className="right-sidebar">
+      <div className="home-page-right-sidebar">
         {/* Right sidebar content */}
       </div>
     </div>

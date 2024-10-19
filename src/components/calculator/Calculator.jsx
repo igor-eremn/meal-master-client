@@ -4,11 +4,11 @@ import './Calculator.css';
 const Calculator = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [gender, setGender] = useState('male');
-  const [age, setAge] = useState('');
-  const [weight, setWeight] = useState('');
-  const [height, setHeight] = useState('');
+  const [age, setAge] = useState(1);
+  const [weight, setWeight] = useState(2.5);
+  const [height, setHeight] = useState(30);
   const [activity, setActivity] = useState(1);
-  const [result, setResult] = useState('');
+  const [result, setResult] = useState(0);
 
   const calculateBMR = () => {
     const w = parseFloat(weight);
@@ -53,52 +53,109 @@ const Calculator = () => {
     <div className={`calculator ${isOpen ? 'open' : ''}`}>
       <div className="calculator-header" onClick={() => setIsOpen(!isOpen)}>
         <span>CALCULATOR</span>
-        <button className="toggle-button">{isOpen ? '−' : '□'}</button>
+        <button className="toggle-button">{isOpen ? 'X' : 'O'}</button>
       </div>
       {isOpen && (
         <div className="calculator-body">
           <div className="calculator-row">
-            <button className={`gender-button ${gender === 'male' ? 'active' : ''}`} onClick={() => setGender('male')}>MEN</button>
-            <button className={`gender-button ${gender === 'female' ? 'active' : ''}`} onClick={() => setGender('female')}>WOMEN</button>
-          </div>
-          <div className="calculator-row">
-            <div className="input-group">
-              <label>AG:</label>
-              <input type="number" value={age} onChange={(e) => setAge(e.target.value)} />
-              <span>YR</span>
+            <div className="calculator-column">
+              <div className={`input-group-1 ${gender === 'male' ? 'active' : ''}`}>
+                <button
+                  className={`gender-button`}
+                  onClick={() => setGender('male')}
+                >
+                  MEN
+                </button>
+              </div>
+              <div className="input-group-1">
+  <label>AG:</label>
+  <input
+    type="number"
+    value={age}
+    onChange={(e) => {
+      const value = Math.max(1, Math.min(100, Number(e.target.value))); // Enforce 1 <= value <= 100
+      setAge(value);
+    }}
+    min={1}
+    max={100}
+  />
+  <span>YR</span>
+</div>
+<div className="input-group-1">
+  <label>HT:</label>
+  <input
+    type="number"
+    value={height}
+    onChange={(e) => {
+      const value = Math.max(0, Math.min(300, Number(e.target.value)));
+      setHeight(value);
+    }}
+    min={0}
+    max={300}
+  />
+  <span>CM</span>
+</div>
+<div className="input-group-1">
+  <label>WT:</label>
+  <input
+    type="number"
+    value={weight}
+    onChange={(e) => {
+      const value = Math.max(2.5, Math.min(300, Number(e.target.value)));
+      setWeight(value);
+    }}
+    min={2.5}
+    max={300}
+  />
+  <span>KG</span>
+</div>
+
             </div>
-          </div>
-          <div className="calculator-row">
-            <div className="input-group">
-              <label>HT:</label>
-              <input type="number" value={height} onChange={(e) => setHeight(e.target.value)} />
-              <span>CM</span>
-            </div>
-          </div>
-          <div className="calculator-row">
-            <div className="input-group">
-              <label>WT:</label>
-              <input type="number" value={weight} onChange={(e) => setWeight(e.target.value)} />
-              <span>KG</span>
-            </div>
-          </div>
-          <div className="calculator-row">
-            <div className="activity-group">
-              <label>ACTIVE LVL</label>
-              <div className="activity-buttons">
-                {[1, 2, 3, 4].map((level) => (
-                  <button
-                    key={level}
-                    className={`activity-button ${activity === level ? 'active' : ''}`}
-                    onClick={() => setActivity(level)}
-                  >
-                    {level}
-                  </button>
-                ))}
+
+            <div className="calculator-column">
+              <div className={`input-group-1 ${gender === 'female' ? 'active' : ''}`}>
+                <button
+                  className={`gender-button`}
+                  onClick={() => setGender('female')}
+                >
+                  WOMEN
+                </button>
+              </div>
+              <div className="input-group-2">
+                <label>ACTIVE LVL</label>
+              </div>
+              <div className="input-group-2">
+                <div className="activity-grid">
+                  {[1, 2].map((level) => (
+                    <button
+                      key={level}
+                      className={`activity-button ${activity === level ? 'active' : ''}`}
+                      onClick={() => setActivity(level)}
+                    >
+                      {level}
+                    </button>
+                  ))}
+                </div>
+              </div>
+              <div className="input-group-2">
+                <div className="activity-grid">
+                  {[3, 4].map((level) => (
+                    <button
+                      key={level}
+                      className={`activity-button ${activity === level ? 'active' : ''}`}
+                      onClick={() => setActivity(level)}
+                    >
+                      {level}
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
-          <button className="calculate-button" onClick={handleCalculate}>CALCULATE</button>
+
+          <button className="calculate-button" onClick={handleCalculate}>
+            CALCULATE
+          </button>
         </div>
       )}
     </div>

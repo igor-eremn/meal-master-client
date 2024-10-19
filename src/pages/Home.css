@@ -1,71 +1,71 @@
-.home-container {
+.home-page-container {
   display: flex;
   min-height: 90.5vh;
   background-color: #C4DAD2;
 }
 
-.left-sidebar, .right-sidebar {
+.home-page-left-sidebar, .home-page-right-sidebar {
   flex: 0 0 20%;
   position: relative;
 }
 
-.left-sidebar {
+.home-page-left-sidebar {
   border-right: 2px solid #16423C;
 }
 
-.right-sidebar {
+.home-page-right-sidebar {
   border-left: 2px solid #16423C;
 }
 
-.main-content {
+.home-page-main-content {
   flex: 0 0 60%;
   padding: 15px;
   border: 1px solid #6A9C89;
   display: flex;
   flex-direction: column;
 }
-.left-sidebar {
+
+.home-page-left-sidebar {
   display: flex;
   flex-direction: column;
-  justify-content:center;
+  justify-content: center;
 }
 
-
-.calculator-section {
+.home-page-calculator-section {
   margin-top: 20px;
   padding: 15px;
   border: 1px solid #6A9C89;
   border-radius: 4px;
 }
 
-.goal-title {
+.home-page-goal-title {
   font-size: 18px;
   margin-bottom: 15px;
   text-align: center;
 }
 
-.input-row {
+.home-page-input-row {
   display: flex;
   justify-content: space-between;
   margin-bottom: 15px;
 }
 
-.input-group {
+.home-page-input-group {
   flex: 1;
   margin-right: 10px;
 }
 
-.input-group:last-child {
+.home-page-input-group:last-child {
   margin-right: 0;
 }
 
-.input-group label {
+.home-page-input-group label {
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
 }
 
-.input-group input {
+.home-page-input-group input {
   width: 100%;
   padding: 8px;
   border: 1px solid #ddd;
@@ -74,7 +74,7 @@
   box-sizing: border-box;
 }
 
-.ask-ai-button {
+.home-page-ask-ai-button {
   width: 100%;
   background-color: #6A9C89;
   color: white;
@@ -86,11 +86,11 @@
   margin-bottom: 15px;
 }
 
-.ask-ai-button:hover {
+.home-page-ask-ai-button:hover {
   background-color: #5a8c79;
 }
 
-.input-area {
+.home-page-input-area {
   width: 100%;
   min-height: 200px;
   border: 1px solid #ddd;
