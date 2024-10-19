@@ -1,19 +1,33 @@
 .home-container {
-  padding: 20px;
+  display: flex;
+  min-height: 100vh;
+  background-color: #C4DAD2;
 }
 
-.grid-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+.left-sidebar, .right-sidebar {
+  flex: 0 0 20%;
+}
+.left-sidebar{
+  border-right: 2px solid #16423C;
+}
+.right-sidebar{
+  border-left: 2px solid #16423C;
 }
 
-.input-column, .response-column {
+
+.main-content {
+  flex: 0 0 60%;
+  padding: 15px;
+  border: 1px solid #6A9C89;
+  display: flex;
+  flex-direction: column;
+}
+
+.calculator-section {
+  margin-top: 20px;
+  padding: 15px;
   border: 1px solid #6A9C89;
   border-radius: 4px;
-  padding: 15px;
-  min-height: 250px;
-  min-width: 600px;
 }
 
 .goal-title {
@@ -41,7 +55,6 @@
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
-  padding-left: 33%;
 }
 
 .input-group input {
@@ -71,12 +84,12 @@
 
 .input-area {
   width: 100%;
-  min-height: 300px;
-  max-height: 300px;
+  min-height: 200px;
   border: 1px solid #ddd;
   border-radius: 4px;
   padding: 10px;
   background-color: #e0f2f1;
   box-sizing: border-box;
   resize: vertical;
+  margin-bottom: 15px;
 }
