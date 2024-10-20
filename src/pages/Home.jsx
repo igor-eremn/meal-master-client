@@ -1,17 +1,19 @@
+// Home.js
 import React, { useState, useEffect } from 'react';
 import './Home.css';
 import Calculator from '../components/calc-side/calculator/Calculator';
 import CalcInfo from '../components/calc-side/info/CalcInfo';
 import DietPref from '../components/diet-preference/DietPref';
+import ParamChecker from '../components/param-checker/ParamChecker';
 
 const Home = () => {
   const [userInput, setUserInput] = useState(sessionStorage.getItem('userInput') || '');
   const [aiResponse, setAiResponse] = useState(sessionStorage.getItem('aiResponse') || 'Your diet will be here...');
   const [calculatorResult, setCalculatorResult] = useState('');
   const [calculatorResultDetails, setCalculatorResultDetails] = useState(null);
-
   const [weightGoal, setWeightGoal] = useState('');
   const [timeline, setTimeline] = useState('');
+  const [dietPref, setDietPref] = useState(['']);
 
   useEffect(() => {
     sessionStorage.setItem('userInput', userInput);
@@ -53,11 +55,15 @@ const Home = () => {
     }
   };
 
+  const goalSet = weightGoal && timeline; 
+  const dietSet = dietPref.length > 0 && dietPref[0] !== '';
+  const calculatorSet = calculatorResultDetails !== null;
+
   return (
     <div className="home-page-container">
       <div className="home-page-left-sidebar">
         <CalcInfo />
-        <Calculator setDetails={setCalculatorResultDetails}/>
+        <Calculator setDetails={setCalculatorResultDetails} />
       </div>
       <div className="home-page-main-content">
         <h3 className="home-page-goal-title">Your Goal</h3>
@@ -72,7 +78,12 @@ const Home = () => {
             <input type="number" value={timeline} onChange={(e) => setTimeline(e.target.value)} />
           </div>
         </div>
-        <DietPref />
+        
+        <div className="diet-pref-container">
+          <DietPref setDiet={setDietPref}/>
+          <ParamChecker goal={goalSet} dietPref={dietSet} calculator={calculatorSet} />
+        </div>
+        
         <button className="home-page-ask-ai-button" onClick={askAI}>What's my diet then?</button>
         <textarea 
           className="home-page-input-area"

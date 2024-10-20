@@ -7,8 +7,8 @@ import vegetarianIcon from '../../assets/diet-pref/dt-3.png';
 import glutenFreeIcon from '../../assets/diet-pref/dt-4.png';
 import dairyFreeIcon from '../../assets/diet-pref/dt-5.png';
 
-const DietPref = () => {
-  const [selectedDiets, setSelectedDiets] = useState(['normal']);
+const DietPref = ({ setDiet }) => {
+  const [selectedDiets, setSelectedDiets] = useState(['']);
 
   const dietOptions = [
     { name: 'normal', icon: normalIcon },
@@ -63,10 +63,11 @@ const DietPref = () => {
   };
 
   const resetDiets = () => {
-    setSelectedDiets(['normal']);
+    setSelectedDiets(['']);
   };
 
   useEffect(() => {
+    setDiet(selectedDiets);
     console.log('Selected diets:', selectedDiets);
   }, [selectedDiets]);
 

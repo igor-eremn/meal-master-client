@@ -1,0 +1,22 @@
+.param-checker {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #6A9C89;
+    border-radius: 4px;
+    background-color: #e0f2f1;
+  }
+  
+  .param-checker-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .green {
+    color: green;
+  }
+  
+  .red {
+    color: red;
+  }
+  

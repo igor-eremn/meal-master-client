@@ -39,9 +39,10 @@
 }
 
 .home-page-goal-title {
-  font-size: 18px;
+  font-size: 25px;
   margin-bottom: 15px;
   text-align: center;
+  margin-top: 100px;
 }
 
 .home-page-input-row {
@@ -63,6 +64,9 @@
   display: block;
   margin-bottom: 5px;
   font-weight: bold;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
 }
 
 .home-page-input-group input {
@@ -100,4 +104,16 @@
   box-sizing: border-box;
   resize: vertical;
   margin-bottom: 15px;
+}
+
+.diet-pref-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.diet-pref-container > div {
+  flex: 1;
+  margin: 0 10px;
 }
