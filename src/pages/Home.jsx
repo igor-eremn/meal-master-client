@@ -69,15 +69,20 @@ const Home = () => {
         <h3 className="home-page-goal-title">Your Goal</h3>
         <div className="home-page-input-row">
           <div className="home-page-input-group">
-            <label>Weight Goal (kg):</label>
-            <input type="number" value={weightGoal} onChange={(e) => setWeightGoal(e.target.value)} />
+            <div className="input-label-container">
+              <label>Weight Goal (kg):</label>
+              <input type="number" value={weightGoal} onChange={(e) => setWeightGoal(e.target.value)} />
+            </div>
           </div>
-          
+
           <div className="home-page-input-group">
-            <label>Timeline (days):</label>
-            <input type="number" value={timeline} onChange={(e) => setTimeline(e.target.value)} />
+            <div className="input-label-container">
+              <label>Timeline (days):</label>
+              <input type="number" value={timeline} onChange={(e) => setTimeline(e.target.value)} />
+            </div>
           </div>
         </div>
+
         
         <div className="diet-pref-container">
           <DietPref setDiet={setDietPref}/>
