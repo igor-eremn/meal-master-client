@@ -7,6 +7,8 @@ import DietPref from '../components/diet-preference/DietPref';
 const Home = () => {
   const [userInput, setUserInput] = useState(sessionStorage.getItem('userInput') || '');
   const [aiResponse, setAiResponse] = useState(sessionStorage.getItem('aiResponse') || 'Your diet will be here...');
+  const [calculatorResult, setCalculatorResult] = useState('');
+  const [calculatorResultDetails, setCalculatorResultDetails] = useState(null);
 
   const [weightGoal, setWeightGoal] = useState('');
   const [timeline, setTimeline] = useState('');
@@ -18,6 +20,11 @@ const Home = () => {
   useEffect(() => {
     sessionStorage.setItem('aiResponse', aiResponse);
   }, [aiResponse]);
+
+  useEffect(() => {
+    console.log(calculatorResult);
+    console.log(calculatorResultDetails);
+  }, [calculatorResult, calculatorResultDetails]);
 
   const askAI = async () => {
     if (!userInput.trim()) {
@@ -50,7 +57,7 @@ const Home = () => {
     <div className="home-page-container">
       <div className="home-page-left-sidebar">
         <CalcInfo />
-        <Calculator />
+        <Calculator setResult={setCalculatorResult} setDetails={setCalculatorResultDetails}/>
       </div>
       <div className="home-page-main-content">
         <h3 className="home-page-goal-title">Your Goal</h3>

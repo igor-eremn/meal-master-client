@@ -1,19 +1,23 @@
 import React, { useState } from 'react';
 import './Calculator.css';
 
-const Calculator = () => {
+const Calculator = ({ setResult, setDetails }) => {
+  //TODO: why not calculating after first click
   const [isOpen, setIsOpen] = useState(false);
   const [gender, setGender] = useState('male');
   const [age, setAge] = useState(1);
   const [weight, setWeight] = useState(2.5);
   const [height, setHeight] = useState(30);
   const [activity, setActivity] = useState(1);
-  const [result, setResult] = useState(0);
 
   const calculateBMR = () => {
     const w = parseFloat(weight);
     const h = parseFloat(height);
     const a = parseFloat(age);
+    console.log("🚀 ~ calculateBMR ~ w:", w);
+    console.log("🚀 ~ calculateBMR ~ h:", h);
+    console.log("🚀 ~ calculateBMR ~ a:", a);
+    
 
     if (gender === 'male') {
       return 10 * w + 6.25 * h - 5 * a + 5;
@@ -39,14 +43,21 @@ const Calculator = () => {
     const tdee = calculateTDEE(bmr);
     const macros = calculateMacros(tdee);
 
+    const protein = macros.protein.toFixed(2);
+    const carbs = macros.carbs.toFixed(2);
+    const fats = macros.fats.toFixed(2);
+
     setResult(
       `BMR: ${bmr.toFixed(2)} calories/day\n` +
       `TDEE: ${tdee.toFixed(2)} calories/day\n` +
       `Macros:\n` +
-      `Protein: ${macros.protein.toFixed(2)}g\n` +
+      `Protein: ${protein}g\n` +
       `Carbs: ${macros.carbs.toFixed(2)}g\n` +
       `Fats: ${macros.fats.toFixed(2)}g`
     );
+
+    const details = {bmr, tdee, macros, protein, carbs, fats};
+    setDetails(details);
   };
 
   return (
