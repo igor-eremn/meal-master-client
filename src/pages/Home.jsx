@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Home.css';
-import Calculator from '../components/calculator/Calculator';
+import Calculator from '../components/CalcSide/calculator/Calculator';
+import CalcInfo from '../components/CalcSide/info/CalcInfo';
 import DietPref from '../components/diet-preference/DietPref';
 
 const Home = () => {
@@ -48,6 +49,7 @@ const Home = () => {
   return (
     <div className="home-page-container">
       <div className="home-page-left-sidebar">
+        <CalcInfo />
         <Calculator />
       </div>
       <div className="home-page-main-content">

@@ -1,6 +1,6 @@
 .home-page-container {
   display: flex;
-  min-height: 90.5vh;
+  min-height: 90.7vh;
   background-color: #C4DAD2;
 }
 
@@ -9,18 +9,18 @@
   position: relative;
 }
 
-.home-page-left-sidebar {
+/*.home-page-left-sidebar {
   border-right: 2px solid #16423C;
 }
 
 .home-page-right-sidebar {
   border-left: 2px solid #16423C;
-}
+}*/
 
 .home-page-main-content {
   flex: 0 0 60%;
-  padding: 15px;
-  border: 1px solid #6A9C89;
+  padding-top: 10px;
+  padding-inline: 30px;
   display: flex;
   flex-direction: column;
 }

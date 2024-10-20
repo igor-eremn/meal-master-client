@@ -5,12 +5,11 @@ header {
     top: 0;
     width: 100%;
     z-index: 1000;
-    border-bottom: 2px solid #16423C;
-    background-color: #e0f2f1;
+    background-color: #608f7e;
   }
   
   .header-title {
-    color: #16423C;
+    color: white;
     font-size: 40px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin: 0;

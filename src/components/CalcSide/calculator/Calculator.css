@@ -1,6 +1,6 @@
 .calculator {
   background-color: #608f7e;
-  border-radius: 10px;
+  border-top-right-radius: 20px;
   overflow: hidden;
   font-family: Arial, sans-serif;
   color: white;
@@ -8,6 +8,8 @@
   position: absolute;
   bottom: 0;
   left: 0;
+  max-height: 50px;
+  transition: max-height 0.6s ease-in-out;
 }
 
 .calculator-header {
@@ -28,6 +30,7 @@
 
 .calculator-body {
   background-color: #dae8e3;
+  border-right: 3px solid #608f7e;;
   padding: 15px;
 }
 
@@ -173,6 +176,7 @@ input[type=number] {
 
 .calculator.open {
   height: auto;
+  max-height: 500px;
 }
 
 .calculator:not(.open) {

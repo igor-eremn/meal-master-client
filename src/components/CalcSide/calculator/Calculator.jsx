@@ -68,48 +68,38 @@ const Calculator = () => {
                 </button>
               </div>
               <div className="input-group-1">
-  <label>AG:</label>
-  <input
-    type="number"
-    value={age}
-    onChange={(e) => {
-      const value = Math.max(1, Math.min(100, Number(e.target.value))); // Enforce 1 <= value <= 100
-      setAge(value);
-    }}
-    min={1}
-    max={100}
-  />
-  <span>YR</span>
-</div>
-<div className="input-group-1">
-  <label>HT:</label>
-  <input
-    type="number"
-    value={height}
-    onChange={(e) => {
-      const value = Math.max(0, Math.min(300, Number(e.target.value)));
-      setHeight(value);
-    }}
-    min={0}
-    max={300}
-  />
-  <span>CM</span>
-</div>
-<div className="input-group-1">
-  <label>WT:</label>
-  <input
-    type="number"
-    value={weight}
-    onChange={(e) => {
-      const value = Math.max(2.5, Math.min(300, Number(e.target.value)));
-      setWeight(value);
-    }}
-    min={2.5}
-    max={300}
-  />
-  <span>KG</span>
-</div>
-
+                <label>AG:</label>
+                <input
+                  type="number"
+                  value={age}
+                  onChange={(e) => {setAge(e.target.value)}}
+                  min={1}
+                  max={100}
+                />
+                <span>YR</span>
+              </div>
+              <div className="input-group-1">
+                <label>HT:</label>
+                <input
+                  type="number"
+                  value={height}
+                  onChange={(e) => {setHeight(e.target.value)}}
+                  min={0}
+                  max={300}
+                />
+                <span>CM</span>
+              </div>
+              <div className="input-group-1">
+                <label>WT:</label>
+                <input
+                  type="number"
+                  value={weight}
+                  onChange={(e) => {setWeight(e.target.value)}}
+                  min={2.5}
+                  max={300}
+                />
+                <span>KG</span>
+              </div>
             </div>
 
             <div className="calculator-column">
