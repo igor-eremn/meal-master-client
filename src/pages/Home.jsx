@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import './Home.css';
 import Calculator from '../components/CalcSide/calculator/Calculator';
+import Result from '../components/CalcResultSide/Result';
 import CalcInfo from '../components/CalcSide/info/CalcInfo';
+import ResultInfo from '../components/CalcResultSide/ResultInfo';
 import DietPref from '../components/diet-preference/DietPref';
 
 const Home = () => {
@@ -82,7 +84,8 @@ const Home = () => {
         ></textarea>
       </div>
       <div className="home-page-right-sidebar">
-        {/* Right sidebar content */}
+        <ResultInfo />
+        <Result />
       </div>
     </div>
   );
