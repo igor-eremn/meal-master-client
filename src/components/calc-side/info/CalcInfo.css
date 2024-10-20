@@ -36,6 +36,34 @@
     border-right: 3px solid #608f7e;;
     padding: 15px;
   }
+
+  .calc-info-row {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .calc-info-column {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .input-group-2 {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    justify-content: start;
+    border-radius: 5px;
+    padding: 5px 15px;
+    margin-bottom: 10px;
+    height: 40px;
+    width: 100%;
+  }
+
+  .input-group-2 label{
+    color: #4a7062;
+    font-weight: bolder;
+  }
   
   .calc-info.open {
     max-height: 500px;

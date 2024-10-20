@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Home.css';
-import Calculator from '../components/CalcSide/calculator/Calculator';
-import Result from '../components/CalcResultSide/Result';
-import CalcInfo from '../components/CalcSide/info/CalcInfo';
-import ResultInfo from '../components/CalcResultSide/ResultInfo';
+import Calculator from '../components/calc-side/calculator/Calculator';
+import CalcInfo from '../components/calc-side/info/CalcInfo';
 import DietPref from '../components/diet-preference/DietPref';
 
 const Home = () => {
@@ -59,7 +57,7 @@ const Home = () => {
     <div className="home-page-container">
       <div className="home-page-left-sidebar">
         <CalcInfo />
-        <Calculator setResult={setCalculatorResult} setDetails={setCalculatorResultDetails}/>
+        <Calculator setDetails={setCalculatorResultDetails}/>
       </div>
       <div className="home-page-main-content">
         <h3 className="home-page-goal-title">Your Goal</h3>
@@ -84,8 +82,6 @@ const Home = () => {
         ></textarea>
       </div>
       <div className="home-page-right-sidebar">
-        <ResultInfo />
-        <Result />
       </div>
     </div>
   );

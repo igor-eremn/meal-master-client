@@ -185,3 +185,17 @@ input[type=number] {
 .calculator:not(.open) {
   height: 40px;
 }
+
+.calculator-result-area {
+  width: 100%;
+  min-height: 115px;
+  max-height: 115px;
+  margin-top: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  background-color: #e0f2f1;
+  box-sizing: border-box;
+  resize: vertical;
+  margin-bottom: 15px;
+}
